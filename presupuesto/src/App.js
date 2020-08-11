@@ -14,12 +14,9 @@ function App() {
 
   useEffect(() => {
     if (createExpense) {
-      // add expense to
       saveExpenses([...expenses, expense])
-
       const newBalance = balance - expense.qty
       saveBalance(newBalance)
-
       saveCreateExpense(false)
     }
   }, [expense, createExpense, expenses, balance])
